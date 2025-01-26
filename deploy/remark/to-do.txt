@@ -1,0 +1,23 @@
+#run container for load balance and include build from initial
+sudo docker compose up -d --build --scale flask-yolo=3
+sudo docker compose up -d --scale flask-yolo=3
+
+don't forget to create floder name models/yolov8/best.pt
+
+#Run for mod version need to use git token for access repo
+#linux
+export GITHUB_TOKEN=ghp_ABC1234567890xyzExampleToken
+sudo docker compose up -d --build --scale flask-yolo=2
+
+#windown
+$env:GITHUB_TOKEN = "ghp_ABC1234567890xyzExampleToken"
+docker compose up -d --build --scale flask-yolo=2
+
+
+
+#set-up
+# dependency
+ultralytics install from mod local
+pip install flask
+pip install nest-asyncio pyngrok
+pip install gunicorn    -> WSGI for deploy 

@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  flask-yolo:
+    image: flask-yolo
+    # container_name: flask-yolo
+    hostname: flask-yolo-service
+    # build: ./deploy
+    build:
+      context: ./deploy
+      args:
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
+    volumes:
+      - ./deploy:/app
+    ports:
+      # - 5000:5000
+      - 5000
+
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - flask-yolo
+    ports:
+      - "80:80"

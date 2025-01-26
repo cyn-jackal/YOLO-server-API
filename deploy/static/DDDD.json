@@ -1,0 +1,61 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "This Swagger API from student IITA NPTU",
+      "version": "1.0.0",
+      "title": "Flask-ReastAPI-Larvae-detection-yolo",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+      "paths": {
+        "/hello": {
+          "get": {
+            "tags": [
+              "API test"
+            ],
+            "summary": "Returns message hello world",
+            "responses": {
+              "200": {
+                "description": "OK"
+              
+              }
+            }
+          }
+        },
+        "/objectdetection": {
+            "post": {
+              "tags": [
+                "API test"
+              ],
+              "summary": "Returns message larvae detection",
+              "consumes": [
+                "multipart/form-data"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                  {
+                    "name": "file",
+                    "in": "formData",
+                    "description": "file to upload",
+                    "required": false,
+                    "type": "file"
+                  }
+            ],
+              "responses": {
+                "200": {
+                  "description": "OK",
+                  "schema": {
+                    "type": "file",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+    }
+    
+}

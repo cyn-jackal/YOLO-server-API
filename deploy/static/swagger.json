@@ -1,0 +1,169 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "This Swagger API from student IITA NPTU",
+      "version": "1.0.0",
+      "title": "Flask-ReastAPI-Larvae-detection-yolo",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+      "paths": {
+        "/hello": {
+          "get": {
+            "tags": [
+              "Task test"
+            ],
+            "summary": "Returns message hello world",
+            "responses": {
+              "200": {
+                "description": "OK"
+              
+              }
+            }
+          }
+        },
+        "/objectdetection_yolov8": {
+            "post": {
+              "tags": [
+                "Task yolov8"
+              ],
+              "description": "",
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "400": {
+                  "description": "Bad Request"
+                }
+              },
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "file",
+                          "format": "binary"
+                        }
+                      },
+                      "required": [
+                        "image"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/objectdetection_img_yolov8": {
+            "post": {
+              "tags": [
+                "Task yolov8"
+              ],
+              "description": "",
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "400": {
+                  "description": "Bad Request"
+                }
+              },
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "file",
+                          "format": "binary"
+                        }
+                      },
+                      "required": [
+                        "image"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/objectdetection_yolov5": {
+            "post": {
+              "tags": [
+                "Task yolov5"
+              ],
+              "description": "",
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "400": {
+                  "description": "Bad Request"
+                }
+              },
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "file",
+                          "format": "binary"
+                        }
+                      },
+                      "required": [
+                        "image"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/objectdetection_img_yolov5": {
+            "post": {
+              "tags": [
+                "Task yolov5"
+              ],
+              "description": "",
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "400": {
+                  "description": "Bad Request"
+                }
+              },
+              "requestBody": {
+                "required": true,
+                "content": {
+                  "multipart/form-data": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "image": {
+                          "type": "file",
+                          "format": "binary"
+                        }
+                      },
+                      "required": [
+                        "image"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+    }
+    
+}
