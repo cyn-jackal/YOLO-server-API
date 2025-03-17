@@ -11,23 +11,24 @@ COPY . .
 RUN apt-get update && apt-get install -y ffmpeg libsm6 libxext6 git
 
 # Add build argument for GitHub token (used for accessing private repositories)
-ARG GITHUB_TOKEN
+# ARG GITHUB_TOKEN
 
 # Install dependencies from requirements.txt
 # RUN pip install -r requirements.txt
-RUN pip install flask nest-asyncio pyngrok gunicorn
+# RUN pip install flask nest-asyncio pyngrok gunicorn
 # RUN pip install ultralytics
 
-# Clone the ultralytics-mod repository using the GitHub token for authentication
-RUN git clone https://${GITHUB_TOKEN}@github.com/Chayanonjackal/YOLO11-DSConv.git
+# Clone the YOLO11-DSConv repository using the GitHub token for authentication
+# RUN git clone https://${GITHUB_TOKEN}@github.com/cyn-jackal/YOLO11-DSConv.git
+RUN git clone https://github.com/cyn-jackal/YOLO11-DSConv.git
 
 # setting appropriate permissions using
-RUN chmod -R 755 /app/ultralytics-mod
+RUN chmod -R 755 /app/YOLO11-DSConv
 
-RUN ls /app/ultralytics-mod
+RUN ls /app/YOLO11-DSConv
 
 # # Navigate into the cloned repository directory and install the package in editable mode
-WORKDIR /app/ultralytics-mod
+WORKDIR /app/YOLO11-DSConv
 # RUN pip install -e . --verbose
 RUN pip install .
 

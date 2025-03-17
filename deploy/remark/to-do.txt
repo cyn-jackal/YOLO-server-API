@@ -14,7 +14,6 @@ $env:GITHUB_TOKEN = "ghp_ABC1234567890xyzExampleToken"
 docker compose up -d --build --scale flask-yolo=2
 
 
-
 #set-up
 # dependency
 ultralytics install from mod local
