@@ -40,7 +40,6 @@ model_yolo = RTDETR('./models/rt-detr/best.pt')
 
 @app.route("/")
 def home():
-    # return render_template('index.html')
     with open("index.html") as file:
         return file.read()
 
@@ -61,9 +60,7 @@ def predict():
         image_bytes = image_file.read()
         img = Image.open(io.BytesIO(image_bytes))
 
-        # model_yolo predict confidence at 50%
-        # results = model_yolo.predict(img, conf=0.5)
-        # results = model_yolo.predict(img)
+        # model_yolo predict confidence %
         results = model_yolo.predict(img, conf=0.1)
 
         # recreate array that return number of larva
@@ -115,7 +112,6 @@ def predict():
 
     return {
         "result": {
-            # "data": output,
             "larva_stage": {
                 "larva1": len(larva_state_1),
                 "larva2": len(larva_state_2),
@@ -142,18 +138,10 @@ def predict_img():
         image_bytes = image_file.read()
         img = Image.open(io.BytesIO(image_bytes))
 
-        # Resize the image (e.g., 640x640, adjust as needed for YOLO)
-        # img = img.resize((640, 640), Image.Resampling.LANCZOS)
-
-        # model_yolo predict confidence at 50%
-        # results = model_yolo.predict(img, conf=0.5)
-        # results = model_yolo.predict(img)
+        # model_yolo predict confidence %
         results = model_yolo.predict(img, conf=0.1)
 
         # input must be byte type
-        # print('results[0]',results[0])
-        # res_plotted = results[0].plot()
-        # res_plotted = results[0].plot(labels=False)
         res_plotted = results[0].plot(conf=False)
 
         # Save the image to a temporary file
@@ -174,16 +162,10 @@ def predict_img_base64():
         image_bytes = image_file.read()
         img = Image.open(io.BytesIO(image_bytes))
 
-        # Resize the image (e.g., 640x640, adjust as needed for YOLO)
-        # img = img.resize((640, 640), Image.Resampling.LANCZOS)
-
-        # model_yolo predict confidence at 50%
-        # results = model_yolo.predict(img, conf=0.5)
-        # results = model_yolo.predict(img)
+        # model_yolo predict confidence %
         results = model_yolo.predict(img, conf=0.1)
 
         # input must be byte type
-        # res_plotted = results[0].plot()
         res_plotted = results[0].plot(conf=False)
 
         # Save the image to a temporary file
