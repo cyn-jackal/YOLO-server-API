@@ -12,8 +12,8 @@ authors:
       family-names: An-Chao
       affiliation: NPTU
 
-repository-code: "https://github.com/cyn-jackal/YOLO11-DSConv"
-url: "https://github.com/cyn-jackal/YOLO11-DSConv"
+repository-code: "https://github.com/cyn-jackal/YOLO-server-API"
+url: "https://github.com/cyn-jackal/YOLO-server-API"
 license: AGPL-3.0
 version: 1.2.0
 date-released: "2025-03-18"
