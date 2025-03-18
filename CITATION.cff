@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: YOLO-server-API
+message: >-
+    If you use this software, please cite it using the
+    metadata from this file.
+type: software
+authors:
+    - given-names: Chayanon
+      family-names: Pookunngern
+      affiliation: NPTU
+    - given-names: Tsai
+      family-names: An-Chao
+      affiliation: NPTU
+
+repository-code: "https://github.com/cyn-jackal/YOLO11-DSConv"
+url: "https://github.com/cyn-jackal/YOLO11-DSConv"
+license: AGPL-3.0
+version: 1.2.0
+date-released: "2025-03-18"
